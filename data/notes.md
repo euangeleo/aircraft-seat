@@ -1,10 +1,10 @@
-#Airplane seats
+# Airplane seats
 
-##Purchase information=
+## Purchase information=
 SELLER: Whale Tail Sales
 URL: https://whaletailsales.com/products/first-class-airline-seats
 
-##Provenance and identifying information
+## Provenance and identifying information
 tag:
 
 ```
@@ -38,7 +38,7 @@ elsewhere
 
 Seat Model: Sicma Aero 1606211
 
-##Notes
+## Notes
 * two seats
 * left side looks like it was wall-facing, right side has step up
 * indicated as Row 11 (separately: this would be second row First Class)
@@ -47,7 +47,7 @@ Seat Model: Sicma Aero 1606211
  * under center: Boeing / Matsushita "Seat Electronics Box RD-AX4406"
  * under right seat: Astronics "AC In-Seat Power Supply P/N 3E2Y8/1191-8" , PGA Electronic P80437-M01 Rev A
 
-###Matsushita SEB
+### Matsushita SEB
 * Two connectors at rear of box (left/right): coax plus five pins
 * One connector at front of box, connected two two cables that head into the central armrest
 * Interpretation: this looks like it receives an RF signal over coax, plus five other pins, and passes the same signal on to daisy chain to the next seat, while also passing a 24-pin output to this pair of seats. If the neighboring box (under right seat) is representative, the input goes into the left connector, and the right connector is the output to the next seat.
@@ -66,7 +66,7 @@ Seat Model: Sicma Aero 1606211
 
 * NOTE: The controls that are on the IFE panel are: volume up; volume down; channel up; channel down; light toggle; attendant call; attendant call clear;
 
-###Astronics power supply
+### Astronics power supply
 
 * Labels on 2 rear connectors: no labels
 * Left is 6 pin male, right is six pin female
@@ -79,7 +79,7 @@ Seat Model: Sicma Aero 1606211
 * Right: "X3 OUTPUT next SEAT", six pin female
 * Interpretation: power is daisy-chained from one row of seats to the next?
 
-##Task list
+## Task list
 
 * clean upholstery
 
