@@ -1,6 +1,6 @@
 # Airplane seats
 
-## Purchase information=
+## Purchase information
 SELLER: Whale Tail Sales
 URL: https://whaletailsales.com/products/first-class-airline-seats
 
