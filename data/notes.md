@@ -50,7 +50,7 @@ Seat Model: Sicma Aero 1606211
 ### Matsushita SEB
 * Two connectors at rear of box (left/right): coax plus five pins
 * One connector at front of box, connected two two cables that head into the central armrest
-* Interpretation: this looks like it receives an RF signal over coax, plus five other pins, and passes the same signal on to daisy chain to the next seat, while also passing a 24-pin output to this pair of seats. If the neighboring box (under right seat) is representative, the input goes into the left connector, and the right connector is the output to the next seat.
+* Interpretation: this looks like it receives an RF signal over coax, plus five other pins, from one connector on rear, and passes the same signal on to daisy chain to the next seat via the other connector on rear, while also passing a 24-pin output (via connector at front, not all conductors are used) to the IFE control panels for this pair of seats. If the neighboring box (power box under right seat) is representative, the input goes into the left connector, and the output to next seat is from right connector.
 * I think this handles just the In Flight Entertainment (ie, audio only), not the 120V AC outlets. The diameter of the conductors seems too small for the power draw you might have on a power socket. Need to check the wiring to make sure.
 * This *might* run the reading lights (I note that there *is* a light control on the IFE panel; does this control these reading lights, or a light placed in the cabin ceiling?), but if so, I suspect it's providing 5V to them, not anything more powerful.
 * There are screen-printed labels between the two PC boards: (see photos)
@@ -61,8 +61,9 @@ Seat Model: Sicma Aero 1606211
 * The 1 2 3 4 likely refer to seats, not audio channels, since the largest number of seats in a row is hypotheticaly four (in a center section; that way, the same box could be used everywhere, and just wired up differently depending on the number of seats); the L and R then refer to left/right channel. (NOT left/right seat, which would then be specific to just a pair of seats)
 
 * The output from this box is simpler, in terms of conductors in the receptacle. 
-* I think the easiest thing will be to simply bypass this box; otherwise, I think I'd have to encode multiple audio streams into the RF input, and I'm not sure how to do that.
-* There are just six pins that go in to each controller, though; I should be able to provide power and signal to those six pins for each side.
+* I think the easiest thing will be to simply bypass this box; otherwise, I think I'd have to encode multiple audio streams into the RF input, and I'm not sure how to do that
+* The controlers in the armrests are marked: PCU (passenger control unit?) MFR P/N RD-AX6530-E1 S/N 00871 MFG DATE 08 '9(1?) Matsushita Electric Industrial Co, Ltd.
+* There are just six pins that go in to each controller, and three conductors that leave each controller to the headphone jack; I should be able to provide power and signal to those six pins for each side.
 
 * NOTE: The controls that are on the IFE panel are: volume up; volume down; channel up; channel down; light toggle; attendant call; attendant call clear;
 
@@ -75,8 +76,9 @@ Seat Model: Sicma Aero 1606211
 ### PGA box?
 
 * Labels on 2 rear connectors:
-* Left: "X1 INPUT 115V 400Hz", six pin male
+* Left: "X1 INPUT 115V 400Hz", six pin male 
 * Right: "X3 OUTPUT next SEAT", six pin female
+* Two front outputs: insulated wire, no connector. (Is this simply power, to the outlets at the front of the seat? Cannot follow wiring to make sure.
 * Interpretation: power is daisy-chained from one row of seats to the next?
 
 ## Task list
