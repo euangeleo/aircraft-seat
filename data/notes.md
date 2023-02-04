@@ -20,10 +20,15 @@ Location removed from: Main cabin
 Removed by initials/badge no/date: JB501450 03/04/21
 ```
 Information about N281AS:
+
 https://www.planespotters.net/airframe/boeing-767-300-n281as-aersale-inc/rm08ke
+
 Boeing 767-300
+
 last air carrier: El Al, registered 4X-EAM, Daliat El Carmel / דאלית אל כרמל
+
 First Class interior photo (similar):
+
 https://www.airliners.net/photo/El-Al-Israel-Airlines/Boeing-767-330-ER/2801977
 
 
