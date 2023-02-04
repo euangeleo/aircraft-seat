@@ -1,8 +1,11 @@
 # Airplane seats
 
+Pair of first class seats:
+[pair of Sicma Aero Majesty 1606 seats](https://web.archive.org/web/20230204035608/https://cdn.shopify.com/s/files/1/0549/4924/9221/products/7ddae964-57fa-4efe-aad2-4c080b0e1153_590x.jpg?v=1659049286)
+
 ## Purchase information
 SELLER: Whale Tail Sales
-URL: https://whaletailsales.com/products/first-class-airline-seats
+URL: https://whaletailsales.com/products/first-class-airline-seats [archived](https://web.archive.org/web/20221006153542/https://whaletailsales.com/products/first-class-airline-seats)
 
 ## Provenance and identifying information
 tag:
@@ -27,7 +30,13 @@ Boeing 767-300
 
 last air carrier: El Al, registered 4X-EAM, Daliat El Carmel / דאלית אל כרמל
 
-First Class interior photo (similar):
+[History of 767-300s with El Al](https://www.israelairlinemuseum.org/el-al-fleet/el-al-fleet-historic/el-al-fleet-historic-boeing-767-300s/)
+
+[Last 767-300 commercial flight in 2019](https://web.archive.org/web/20190209181344/https://worldairlinenews.com/2019/02/09/el-al-retires-the-last-boeing-767-300/)
+
+First Class interior:
+
+[Youtube: El Al 767-300 first class interior showing seat pods, Sicma Aerospace Majesty 1606](https://youtube.com/clip/Ugkx5eTNODJqJsnFVsUAPTpRQkua3Jl5rEdc)
 
 https://www.airliners.net/photo/El-Al-Israel-Airlines/Boeing-767-330-ER/2801977
 
