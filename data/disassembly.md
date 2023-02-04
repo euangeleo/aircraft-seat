@@ -22,4 +22,5 @@ Length:
 2. coat hooks
 3. rear document storage/central trim
 4. interior trim panels
-5. left/right side shell
+5. left/right side armrest
+6. left/right side shell
