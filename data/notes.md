@@ -42,6 +42,9 @@ Seat Model: Sicma Aero 1606211
 * two seats
 * left side looks like it was wall-facing, right side has step up
 * indicated as Row 11 (separately: this would be second row First Class)
+* Seats would normally be motorized to move in various ways
+* Without power, the seat joints can be moved by hand if a particular joint is unlocked
+* Lock/unlock panel is at lower front of seat, under foot section (which can be lifted clear if unlocked)
 * underseat electronics boxes (left to right):
  * under left seat: ??
  * under center: Boeing / Matsushita "Seat Electronics Box RD-AX4406"
