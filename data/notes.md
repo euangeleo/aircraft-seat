@@ -1,7 +1,7 @@
 # Airplane seats
 
 Pair of first class seats:
-[pair of Sicma Aero Majesty 1606 seats](https://web.archive.org/web/20230204035608/https://cdn.shopify.com/s/files/1/0549/4924/9221/products/7ddae964-57fa-4efe-aad2-4c080b0e1153_590x.jpg?v=1659049286)
+![pair of Sicma Aero Majesty 1606 seats](https://web.archive.org/web/20230204035608/https://cdn.shopify.com/s/files/1/0549/4924/9221/products/7ddae964-57fa-4efe-aad2-4c080b0e1153_590x.jpg?v=1659049286)
 
 ## Purchase information
 SELLER: Whale Tail Sales
