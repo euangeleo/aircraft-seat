@@ -5,6 +5,8 @@ Photos: [sale item front](https://web.archive.org/web/20230204035608/https://cdn
 
 ## CURRENT NEEDS
 
+* Do you know an inexpensive (up to US$200) way to convert 110V60Hz AC single phase wall power into 115V400Hz AC power?
+ 
 * Were you cabin crew on an aircraft that used Sicma Majesty seats in business or first class? ([This post](https://www.airliners.net/forum/viewtopic.php?t=1378167) suggests these or a related model were used on All Nippon, Condor, Fiji, Malaysia, Philippine, Air Seychelles, and perhaps others) Could you share some of what you know about the operation of these seats? In particular:
   * There are two small points on the right side of the outer shell of this seat that have wiring going to them. Do you know what those were for? Are these just lights (such as to indicate attendant call)?
 
