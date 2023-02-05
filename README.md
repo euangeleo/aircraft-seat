@@ -6,11 +6,11 @@ Photos: [sale item front](https://web.archive.org/web/20230204035608/https://cdn
 ## CURRENT NEEDS
 
 * Do you know an inexpensive (up to US$200) way to convert 110V60Hz AC single phase wall power into 115V400Hz AC power?
- 
-* Were you cabin crew on an aircraft that used Sicma Majesty seats in business or first class? ([This post](https://www.airliners.net/forum/viewtopic.php?t=1378167) suggests these or a related model were used on All Nippon, Condor, Fiji, Malaysia, Philippine, Air Seychelles, and perhaps others) Could you share some of what you know about the operation of these seats? In particular:
-  * There are two small points on the right side of the outer shell of this seat that have wiring going to them. Do you know what those were for? Are these just lights (such as to indicate attendant call)?
 
 * Do you know about the wiring design or maintenance of the underseat boxes that control In Flight Entertainment, or that control seat position? Could you share some of what you know about the power needs and signal inputs to these devices? In particular:
   * Do you know what kind of signals are sent from the Boeing / Matsushita "Seat Electronics Box" (RD-AX4406) to the seat-arm control panel (Matsushita PCU RD-AX6530-E1), and what kinds of signals are sent from the seat-arm control panel back to the SEB?
+
+* Were you cabin crew on an aircraft that used Sicma Majesty 1606 seats in business or first class? ([This post](https://www.airliners.net/forum/viewtopic.php?t=1378167) suggests these or a related model were used on All Nippon, Condor, Fiji, Malaysia, Philippine, Air Seychelles, and perhaps others) Could you share some of what you know about the operation of these seats? In particular:
+  * There are two small points on the right side of the outer shell of this seat that have wiring going to them. Do you know what those were for? Are these just lights (such as to indicate attendant call)?
 
 If you're willing to share information, please contact me at `euangeleo AT gmail DOT com`
