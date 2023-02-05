@@ -52,6 +52,11 @@ elsewhere
 
 Seat Model: Sicma Aero 1606211
 
+## Other helpful online information
+
+* [Someone trying to provide power to first class seats](https://www.reddit.com/r/arduino/comments/f3k6qs/first_class_airplane_seat_project_help/) (unsure of seat model, but may be similar electronics)
+* [Wiring diagram, single seat](https://wingdesign.com/wp-content/uploads/2016/06/25-26-38-TESTO-PART-2-.pdf) for B767-300 (looks like a different seat model, but wiring principles may be similar?)
+
 ## Notes
 * two seats
 * left side looks like it was wall-facing, right side has step up
