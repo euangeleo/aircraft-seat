@@ -97,28 +97,3 @@ Seat Model: Sicma Aero 1606211
 * Right: "X3 OUTPUT next SEAT", six pin female
 * Two front outputs: insulated wire, no connector. (Is this simply power, to the outlets at the front of the seat? Cannot follow wiring to make sure.
 * Interpretation: power is daisy-chained from one row of seats to the next?
-
-## Task list
-
-* clean upholstery
-
-* dust/clean upper/outer and inner/under
-
-* re-glue center armrest top panel
-(wait until I'm sure I don't need access to the center console)
-
-* move upstairs -- I THINK I NEED TO DISASSEMBLE TO GET IT UP THE STAIRS
-
-* build a frame so it won't tip forward when two are reclining?
-
-* power supply to FRONT OUTLETS (INPUT: 115V400Hz into PGA box, OUTPUT: 110V60Hz out from PGA box to outlets on front of center console?)
-
-* power supply to READING LIGHTS (5V from SEB?)
-
-* power supply to MOTORS (INPUT: 115V400Hz into Astronics box?)
-
-* In-flight entertainment:
-ideas:
-  * find a small FM radio with presets, and wire pre-sets in to the previous IFE bus?
-  * Use R Pi to pull Internet radio streams based on which channel is selected on IFE seat arm panel?
-  * Run separate source directly into 1/8in stereo jack (in which case pabel is non-functional)?
