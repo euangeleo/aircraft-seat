@@ -60,9 +60,9 @@ Seat Model: Sicma Aero 1606211
 * Without power, the seat joints can be moved by hand if a particular joint is unlocked
 * Lock/unlock panel is at lower front of seat, under foot section (which can be lifted clear if unlocked)
 * underseat electronics boxes (left to right):
- * under left seat: ??
- * under center: Boeing / Matsushita "Seat Electronics Box RD-AX4406"
- * under right seat: Astronics "AC In-Seat Power Supply P/N 3E2Y8/1191-8" , PGA Electronic P80437-M01 Rev A
+  * under left seat: ??
+  * under center: Boeing / Matsushita "Seat Electronics Box RD-AX4406"
+  * under right seat: Astronics "AC In-Seat Power Supply P/N 3E2Y8/1191-8" , PGA Electronic P80437-M01 Rev A
 
 ### Matsushita SEB
 * Two connectors at rear of box (left/right): coax plus five pins
