@@ -5,7 +5,7 @@ Photos: [sale item front](https://web.archive.org/web/20230204035608/https://cdn
 
 ## CURRENT NEEDS
 
-* Were you cabin crew on an aircraft that used Sicma Majesty seats in business or first class? Could you share some of what you know about the operation of these seats? In particular:
+* Were you cabin crew on an aircraft that used Sicma Majesty seats in business or first class? ([This post](https://www.airliners.net/forum/viewtopic.php?t=1378167) suggests these or a related model were used on All Nippon, Condor, Fiji, Malaysia, Philippine, Air Seychelles, and perhaps others) Could you share some of what you know about the operation of these seats? In particular:
   * There are two small points on the right side of the outer shell of this seat that have wiring going to them. Do you know what those were for? Are these just lights (such as to indicate attendant call)?
 
 * Do you know about the wiring design or maintenance of the underseat boxes that control In Flight Entertainment, or that control seat position? Could you share some of what you know about the power needs and signal inputs to these devices? In particular:
