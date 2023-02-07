@@ -102,3 +102,9 @@ Seat Model: Sicma Aero 1606211
 * Right: "X3 OUTPUT next SEAT", six pin female
 * Two front outputs: insulated wire, no connector. (Is this simply power, to the outlets at the front of the seat? Cannot follow wiring to make sure.
 * Interpretation: power is daisy-chained from one row of seats to the next?
+
+## Humor
+Passenger items I've found in the seats so far:
+* one pair black in-flight socks
+* one unused toothpick in a paper wrapper
+* one green string with split-ring ends
