@@ -7,8 +7,11 @@ Photos: [sale item front](https://web.archive.org/web/20230204035608/https://cdn
 ### data/ 
 * Notes and observations on seat function: [notes.md](./data/notes.md)
 * Steps to disassemble: [disassembly.md](./data/disassembly.md)
+* Information on electrical/electronics: [electrical.md](./data/electrical.md)
 ### media/
+* Photos documenting process
 ### app/
+* Code for any Raspberry Pi control
 
 ## CURRENT NEEDS
 
