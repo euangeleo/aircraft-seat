@@ -4,7 +4,7 @@ Documentation and data collection for the purpose of turning a pair of aircraft 
 Photos: [sale item front](https://web.archive.org/web/20230204035608/https://cdn.shopify.com/s/files/1/0549/4924/9221/products/7ddae964-57fa-4efe-aad2-4c080b0e1153_590x.jpg?v=1659049286), [sale item side](https://web.archive.org/web/20230204035608/https://cdn.shopify.com/s/files/1/0549/4924/9221/products/0ef2b787-492b-4cf6-bc5a-ce2780ae2959_590x.jpg?v=1659049286); [sale item rear](https://web.archive.org/web/20230204035611/https://cdn.shopify.com/s/files/1/0549/4924/9221/products/09a87aa3-be4b-4926-8422-f59d08f717c0_590x.jpg?v=1659049288); [in cabin from front](https://www.airliners.net/photo/El-Al-Israel-Airlines/Boeing-767-330-ER/2801977); [in cabin from rear](https://www.jetphotos.com/photo/8367145)
 
 ## Repository structure
-*Current working plan (and past plans that didn't work): [plan.md](./plan.md)
+* Current working plan (and past plans that didn't work): [plan.md](./plan.md)
 
 ### data/ 
 * Notes and observations on seat function: [notes.md](./data/notes.md)
