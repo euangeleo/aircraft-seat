@@ -4,17 +4,11 @@ Suppose you needed to move these seats through a doorway, or up a stairway, whic
 
 ## Initial seat pod dimensions
 
-Width:
+Width, widest point: 50 inches (approx)
 
-  widest point: 50 inches (approx)
+Height, highest point: 46 inches (approx)
 
-Height:
-
-  highest point: 46 inches (approx)
-
-Length:
-
-  longest point: 55 inches (approx)
+Length, longest point: 55 inches (approx)
   
 ## Disassemble armrest/table
 
@@ -33,3 +27,14 @@ This removes some weight from the seats, but also gives clear access to the back
 5. disconnect left/right side armrest (pwo sheet metal screws each side, phillips)
 6. disconnect left/right side shell (four hex each side), careful to remove any cable connectors (in my case, two on right shell)
 
+## Final state
+
+Recline seats manually to flat configuration with legrest and footrest stowed.
+
+Width, widest point: 48 inches (approx)
+
+Height, highest point: 26.5 inches (approx)
+
+Length, longest point: 51.5 inches (approx)
+
+Move through doorways/stairs with "length" in vertical direction, "height" in horizontal direction.
