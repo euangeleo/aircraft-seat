@@ -27,7 +27,7 @@ This removes some weight from the seats, but also gives clear access to the back
 ## Disassemble shell
 
 1. Remove left and right rear foot panels by removing four (each) machine screws (pan head, Phillips #2), two from each side of each panel. [photo](../media/003-rear-panels.jpg)
-2. Remove left and right coat hooks by removing two (each) small machine screw (countersunk flat head, Phillips #2?), visible after raising the hook. [photo](004-coat-hooks.jpg)
+2. Remove left and right coat hooks by removing two (each) small machine screw (countersunk flat head, Phillips #2?), visible after raising the hook. [photo](../media/004-coat-hooks.jpg)
 3. rear document storage/central trim: one (each) machine screw (countersunk flat head, Phillips #2) in coat hook indent, four (2 left & right) on lower flange
 4. interior trim panels (velcro)
 5. disconnect left/right side armrest (pwo sheet metal screws each side, phillips)
