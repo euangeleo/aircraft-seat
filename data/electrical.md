@@ -17,8 +17,8 @@ Observations
 * back of light head includes a momentary on/off switch and a momentary intensity switch
 * wires indicate "12V DC" and a S/N
 * Testing:
-  * lights come on at 8V, seem reasonably bright at 12V, and brighter still at 15V (but didn't keep it at 15V long)
-  * Provide power, then push on/off to turn on
+  * lights come on at 8V, seem reasonably bright at 12V [photo](../media/101-reading-light.jpg), and brighter still at 15V (but didn't keep it at 15V long)
+  * Provide power, then push button on back on/off to turn on
   * intensity switch cycles between full, mid, low, mid, full ...
   * LEFT SIDE light: Red is positive, brown is ground
   * RIGHT SIDE light: could not see color of wires due to heatshrink
@@ -30,7 +30,7 @@ Observations
 * blue is aft, green is forward
 * green light has brown wire (+5V), red wire (GROUND)
 * blue light has blue/white wire (+5V), white wire (GROUND)
-* Same power supply, green was drawing at 4.5V, blue at 4.9V
+* Same power supply, [green](../media/102-green-light.jpg) was drawing at 4.5V, [blue](../media/103-blue-light.jpg) at 4.9V
 
 ### Center armrest in-flight entertainment controls
 
@@ -40,7 +40,7 @@ Observations
 * LEFT PCU: from top to bottom (when unit is in passenger orientation) all wires are white with colored stripes: 1 orange (or yellow?), 2 red, 3 green, 4 blue, 5 white w/ numbers, 6 black
 * GROUND is third wire from top (white with green stripe)
 * POWER is fourth wire from top (white with blue stripe)
-* display comes on dimly at 5V, looks normally bright at 12V
+* display comes on dimly at 5V, looks normally bright at 12V [photo](../media/104-PCU.jpg)
 * channel indicator came on with "6" on 7-seg display
 * buttons are back-lit
 * pushing buttons (volume up, volume down, channel up, channel down, light, attendant call, attendant clear) has no response on panel --> cannot test for volume without having an audio signal to test, but did test for channel, light, attendant call; maybe these momentary buttons just send a signal to the underseat SEB to process the response?
