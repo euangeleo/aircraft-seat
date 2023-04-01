@@ -75,3 +75,4 @@ Passenger items I've found in the seats so far:
 * one pair black in-flight socks
 * one unused toothpick in a paper wrapper
 * one green string with split-ring ends
+* one 1-Euro coin
