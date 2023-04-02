@@ -23,6 +23,6 @@ Photos: [sale item front](https://web.archive.org/web/20230204035608/https://cdn
   * Do you know what kind of signals are sent from the Boeing / Matsushita "Seat Electronics Box" (RD-AX4406) to the seat-arm control panel (Matsushita PCU RD-AX6530-E1), and what kinds of signals are sent from the seat-arm control panel back to the SEB?
 
 * Were you cabin crew on an aircraft that used Sicma Majesty 1606 seats in business or first class? ([This post](https://www.airliners.net/forum/viewtopic.php?t=1378167) suggests these or a related model were used on All Nippon, Condor, Fiji, Malaysia, Philippine, Air Seychelles, and perhaps others) Could you share some of what you know about the operation of these seats? In particular:
-  * There are two small points on the right side of the outer shell of this seat that have wiring going to them. Do you know what those were for? Are these just lights (such as to indicate attendant call)?
+  * There are two small LEDs (one blue, one green) on the right side (the aisle side) of the outer shell of this seat. Do you know what those were for? Are these stgatus indicator lights for the in-seat power supply and recliner control?
 
 If you're willing to share information, please contact me at `euangeleo AT gmail DOT com`
