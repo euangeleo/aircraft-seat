@@ -73,6 +73,6 @@ Seat Model: Sicma Aero 1606211
 ## Humor
 Passenger items I've found in the seats so far:
 * one pair black in-flight socks
-* one unused toothpick in a paper wrapper
+* two unused toothpicks in a paper wrapper
 * one green string with split-ring ends
 * one 1-Euro coin
