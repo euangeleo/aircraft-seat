@@ -59,7 +59,7 @@ Seat Model: Sicma Aero 1606211
 
 ## Notes
 * two seats
-* left side looks like it was wall-facing, right side has step up
+* left side looks like it was wall-facing, right side has step up (to help access an overhead bin over these seats)
 * indicated as Row 11 (separately: this would be second row First Class), looks to be 11A & 11C
 * Seats would normally be motorized to move in various ways
 * Without power, the seat joints can be moved by hand if a particular joint is unlocked
@@ -73,5 +73,6 @@ Seat Model: Sicma Aero 1606211
 ## Humor
 Passenger items I've found in the seats so far:
 * one pair black in-flight socks
-* one unused toothpick in a paper wrapper
+* two unused toothpicks in a paper wrapper
 * one green string with split-ring ends
+* one 1-Euro coin
