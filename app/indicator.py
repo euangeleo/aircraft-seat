@@ -8,12 +8,27 @@
     -- Valid status is 'STARTUP', 'CONNECTED', or 'ERROR'
 """
 
-from gpiozero import LED
+# following https://thepihut.com/blogs/raspberry-pi-tutorials/27968772-turning-on-an-led-with-your-raspberry-pis-gpio-pins
+#from gpiozero import LED
+import RPi.GPIO as GPIO
 from time import sleep
 
 # CONSTANTS
 STATUSFILE = '/tmp/audiostatus'
-led = LED(2)
+PINNUM = 2
+
+
+def led_on(pinnum=PINNUM):
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setwarnings(False)
+    GPIO.setup(pinnum, GPIO.OUT)
+    GPIO.output(pinnum, GPIO.HIGH)
+    return
+
+
+def led_off(pinnum=PINNUM):
+    GPIO.output(pinnum, GPIO.LOW)
+    return
 
 
 def StartupState():
@@ -21,9 +36,9 @@ def StartupState():
     Flash the LED indicator in a pattern indicating start-up state.
     Run for 2 seconds, then return
     """
-    led.on
+    led_on()
     sleep(1)
-    led.off
+    led_off()
     sleep(1)
     return 0
 
@@ -33,7 +48,7 @@ def ConnectedState():
     Flash the LED indicator in a pattern indicating connected state
     Run for 2 seconds, then return
     """
-    led.on
+    led_on()
     sleep(2)
     return 0
 
@@ -44,9 +59,9 @@ def ErrorState():
     Run for 2 seconds, then return
     """
     for _ in range(10):
-        led.on
+        led_on()
         sleep(0.2)
-        led.off
+        led_off()
         sleep(0.2)
     return 0
 
