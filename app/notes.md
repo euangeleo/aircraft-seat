@@ -13,3 +13,12 @@ connection, and will update the status by writing to a file. A second Python
 script will read from this file every two seconds, command the light to light
 appropriately for those two seconds according to the state in the file, then
 re-check the file, etc,
+
+## End of 2023-05-27
+
+The file `indicator.py` properly controls the shell side LED indicator; it
+is currently connected to the blue/aft LED, with a 330 kOhm resistor in
+series. It properly sets the blinking status based on the text that is in
+`/tmp/audiostatus`.
+
+The file `audiostream.py` writes the `STARTUP` status to the status file.
