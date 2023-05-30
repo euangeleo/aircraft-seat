@@ -14,6 +14,7 @@ Electrical items include:
 
 Observations
 * Two wires plus a grounding strap going to each light, through center pillar
+* These wires are attached to the PGA electronic controller box under left seat
 * back of each reading light module includes a momentary on/off switch and a momentary intensity switch
 * wires indicate "12V DC" and a S/N
 * Testing:
@@ -36,7 +37,9 @@ Observations
 ### Center armrest in-flight entertainment controls
 
 Observations
-* The controlers in the armrests are marked: PCU (passenger control unit?) MFR P/N RD-AX6530-E1 S/N 00871 MFG DATE 08 '9(1?) Matsushita Electric Industrial Co, Ltd.
+* The controllers in the armrests are marked: PCU (passenger control unit?) MFR P/N RD-AX6530-E1 S/N 00871 MFG DATE 08 '9(1?) Matsushita Electric Industrial Co, Ltd.
+* Fasteners: There is one fastener holding each PCU in place. It appears to be a 2.5mm hex-head screw, but perhaps because the interior of the head was somewhat worn, a Torx T10 worked best for moving it.
+* There is a fixed lip on the rear side of the PCU that hooks into the aperture that the PCU sits in; when the screw fastener is loosened and the tongue rotates into the body of the PCU, that end of the PCU (the front end, away from a passenger) can be pulled/rotated outward, and the rearward end can be slid forward and out of the aperture in the armrest. ([video loosening/tightening fastener](../media/221-PCU-latch-loosen-tighten.m4v), [video removing PCU](../media/222-PCU-panel-remove-insert.m4v)) 
 * NOTE: The controls that are on the IFE panel are: volume up; volume down; channel up; channel down; light toggle; attendant call; attendant call clear;
 * LEFT SEAT PCU: five conductors going to each unit (the connector has space for six conductors, but one conductor appears not to have contacts in the receptacle; there is no friction/resistance to a test pin when it is inserted), three conductors going out to audio jack
 * audio jack is two-bayonet style, not 1/8" stereo
@@ -52,7 +55,7 @@ Observations
   * red: right audio jack direct connection
   * grn: left audio jack direct connection
   * blu: no connection to audio ground, audio left, audio right
-  * wht: feels like no conntact in jack
+  * wht: feels like no contact in jack
   * blk: audio ground
 * Screen printing on SEB (below) suggests that these conductors should include (1) left audio, (2) right audio, (3) (common?) ground, (4) PCU power, (5) PCU data. Which is which?
 * Tested power configurations:
@@ -92,12 +95,32 @@ Observations
 (DATA: 1 2 3 4) (POWER: 1 2 3 4) (4: R L) (?: L R) (L R) (L R) (L R) GND
 * The 1 2 3 4 likely refer to seats, not audio channels, since the largest number of seats in a row is hypotheticaly four (in a center section; that way, the same box could be used everywhere, and just wired up differently depending on the number of seats); the L and R then refer to left/right channel. (NOT left/right seat, which would then be specific to just a pair of seats)
 * Wiring has six conductors to each passenger control unit in the armrest, but only five are used? **Data (what format is this signal?), Power (5V?), Ground, audio left, audio right?**
+* My arbitrary pinout numbers: ([photo](../media/217-IFE-box-cable.jpg), [annotated photo](../media/218-IFE-box-cable-pins.jpg))
+
+| connector pin number from image | connects to PCU wire         | best guess function    |
+|---------------------------------|------------------------------|------------------------|
+| 1                               | right, white (2nd from top)  | no connection in jack? |
+| 2                               | left, white (5th from top)   | no connection in jack? |
+| 3                               | left, red (2nd from top)     | right channel audio    |
+| 4                               | right, red (5th from top)    | right channel audio    |
+| 5                               | left, blue (4th from top)    | 5V power               |
+| 7                               | left, black (6th from top)   | ground                 |
+| 8                               | right, black (1st from top)  | ground                 |
+| 11                              | left, green (3rd from top)   | left channel audio     |
+| 13                              | right, green (4th from top)  | left channel audio     |
+| 14                              | (no connection found)        |                        |
+| 15                              | right, blue (3rd from top)   | 5V power               |
+| 17                              | (no connection found)        |                        |
+| 21                              | left, yellow (1st from tope) | data?                  |
+| 22                              | right, yellow (6th from top) | data?                  |
+
 
 **PLAN**
-* I think the easiest thing will be to simply bypass this box; otherwise, I think I'd have to encode multiple audio streams into the RF input, and I'm not sure how to do that in the way that this box expects
+* I think the easiest thing will be to simply bypass this box; otherwise, I think I'd have to encode multiple audio streams into the RF input to pass ***to*** this box, and I'm not sure how to do that in the way that this box expects. I also don't know what kind of power this box expects, or what kinds of input & output it expects on the non-coax pins.
 * Replace this box with a single Raspberry Pi. RasPi can output one audio stream; I think GPIO header can't easily be used for a second audio stream, so if I want the left and right seat panel to have different feeds, I think I'd need two RasPis.
-* Use the green & blue seat shell LEDs as status indicators? Blue is dimmer than green, so maybe have solid blue indicate status up/OK. Green solid for "booting"? Green flashing for "problem"? Number of flashes could indicate sub-problem, but would require users to have a look-up table in order to get useful information just from the flashing.
-
+* Use the green or blue seat shell LEDs as status indicators for the RPi connection? (one LED is run by the PGA ECU, but I think I could choose either LED to be for either purpose now.)
+  * Blue is dimmer than green, so maybe have solid blue indicate status up/OK. slow flashing for "booting"? rapid flashing for "problem"? Number of flashes could indicate sub-problem, but would require users to have a look-up table in order to get useful information just from the flashing.
+* See [code](../app/notes.md)
 
 ### Astronics in-seat power supply
 
@@ -116,3 +139,4 @@ Observations
 * Two front outputs: insulated wire, no connector. (Is this simply power for the ECU under the left seat? Cannot follow wiring to make sure.
 * Interpretation: power is daisy-chained from one row of seats to the next?
 * What does this box output? If it converts 115V400Hz AC power into something else (24/27/29V DC?) for the ECU, then could I simply replace it with a different wall power converter (110V60Hz AC to 27V DC)?
+* Unfortunately, photos of the inside of this box suggest all it does is create a place to daisy-chain to the next seat, while putting a 5A breaker in between the power supply and the actual PGA ECU under the left seat: [photo](../media/232-PGA-ECU-inside.jpg)
