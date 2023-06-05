@@ -15,8 +15,9 @@
 *Summary* Determine the power or signals that would be *output* from each electronics box, and provide those through some other means.
 
 ### RECLINER FUNCTIONS
-* Does the PGA Electronic box simply convert 115V400Hz to 24/27/29 VDC for the motors and controllers? Converters (110V60Hz to 24VDC or 28 VDC can be found in the ideal budget range; just need to know the current draw/wattage.)
-  * How can I figure out what type of power was provided, without having access to any wiring/electronics documentation for this box? Standard home recliners appear to commonly use 24-29V. (For one example, see [this EE StackExchange post](https://electronics.stackexchange.com/questions/568350/different-output-for-recliner-power-supply-safe-to-use-25v-2-5a-to-a-29v-2a).)
+* Does the PGA Electronic box under the right seat simply convert 115V400Hz to 24/27/29 VDC for the motors and controllers? Converters (110V60Hz to 24VDC or 28 VDC can be found in the ideal budget range; just need to know the current draw/wattage.) ***No, it looks like I'll need to provide 115V400Hz if I want to use existing hardware to control the recliner functions. This also includes the 12V taking lights.***
+  * Standard home recliners appear to commonly use 24-29V. (For one example, see [this EE StackExchange post](https://electronics.stackexchange.com/questions/568350/different-output-for-recliner-power-supply-safe-to-use-25v-2-5a-to-a-29v-2a).)
+  * I have a 28V power supply. Can I build a DC to AC converter?
 ### FRONT OF SEAT POWER OUTLETS
 * The Astronics power box appears to convert 115V400Hz to 110V60Hz for the front-side EmPower outlets. There is also a smaller-gauge line that goes from this box to one of the LEDs on the side of the seat shell; was this simply a status or power indicator? Current plan is to remove the Astronics box entirely and wire mains power to the seat-front outlets without modification. The seat shell LED will be wired to the Raspberry Pi (running in-flight entertainment) as a status indicator.
 ### GOOSENECK LED READING LIGHTS
@@ -36,12 +37,17 @@
 
 ## Task list
 * clean upholstery
-* dust/clean upper/outer and inner/under
-  * DONE!
+* dust/clean upper/outer and inner/under -- DONE
+
 * re-glue center armrest top panel (this must wait until I'm sure I don't need access to the center console for any wiring/rewiring work)
-* move upstairs -- I NEED TO DISASSEMBLE TO GET IT IN THE DOOR AND UP THE STAIRS
-  * DONE! Its dimensions now allow moving up the stairs
-* build a frame so it won't tip forward when both seats are reclining? CHECK CENTER OF MASS RELATIVE TO FRONT/REAR FEET WITH TWO PAX
-* power supply to FRONT OUTLETS (use mains power 110V60Hz)
+* move upstairs -- DONE
+
+* build a frame so it won't tip forward when both seats are reclining
+  * two boards, DONE
+  * 1in conduit brackets to secure rear feet to board, in progress
+  * drill holes for forward feet bolts: need dimensions
+* power supply to FRONT OUTLETS (use mains power 110V60Hz) -- DONE
 * power supply to READING LIGHTS (12V from PGA Electronics box (recliner controls)?
 * power supply to MOTORS (INPUT: hard to get 115V400Hz into first PGA box? easier to get 24/27/29 VDC into second PGA box?)
+* wiring harness from RasPi to IFE connector -- in progress
+* RasPi software -- in progress
