@@ -14,7 +14,7 @@ Length, longest point: 55 inches (approx)
 
 1. Remove the glued plastic table surface on the center armrest by carefully prying up from one edge. [photo](../media/002-armrest-table.jpg) It appears to be taped (double-sided tape) to the metal frame below. Mine had a head start because the table was bowing upward on one side. [photo](../media/003-armrest-table-pry.jpg)
 2. Remove four small machine screws (pan head, 2mm hex) from plastic sides going up into metal frame, and six machine screws (countersunk flat head, 3mm hex) from top going down into metal frame.
-3. Partially lift up the metal frame from the forward edge [photo](../media/004-armrest-table-frame.jpg), and carefully disconnect two cable connectors from the seat adjustment panels on the aft underside of the metal frame. [photo](../media/005-armrest-connectors.jpg
+3. Partially lift up the metal frame from the forward edge [photo](../media/004-armrest-table-frame.jpg), and carefully disconnect two cable connectors from the seat adjustment panels on the aft underside of the metal frame. [photo](../media/005-armrest-connectors.jpg)
 
 This removes some weight from the seats, but also gives clear access to the back and wiring of the Passenger Control Units (armrest in-flight entertainment controls) for electrical work. Be aware that this also reduces the strength of the center console, so be careful when moving so as not to overstress the console.
 

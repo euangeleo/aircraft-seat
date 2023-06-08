@@ -27,10 +27,10 @@ def writeStatus(status, path):
     try:
         with open(path, mode='w', encoding='utf-8-sig') as file:
             file.write(status)
+        return 0
     except IOError:
         print("Could not create {}".format(path))
         return(1)
-    return 0
 
 def main():
     """load appropriate audio stream and monitor status"""

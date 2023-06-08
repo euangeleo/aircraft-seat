@@ -2,6 +2,7 @@
 
     Eric M. Jackson
     start of work 2023-05-27
+    v 1.0 2023-06-04
 
     ASSUMPTIONS:
     -- Status file will have the status written on the first line
@@ -15,7 +16,7 @@ from time import sleep
 
 # CONSTANTS
 STATUSFILE = '/tmp/audiostatus'
-PINNUM = 2
+PINNUM = 14 # This pin is directly below the 5V out and ground pin on RPi header that I'm also using
 
 
 def led_on(pinnum=PINNUM):
@@ -81,7 +82,7 @@ def main():
             exitStatus = StartupState()
         elif firstline == 'CONNECTED':
             exitStatus = ConnectedState()
-        else:
+        else:   # assume anything else results in ERROR state
             exitStatus = ErrorState()
 
 if __name__ == "__main__":
