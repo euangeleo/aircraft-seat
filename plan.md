@@ -34,6 +34,22 @@
   * If I can decode the signals from the volume or channel buttons, I could implement some kind of control for the RasPi. Otherwise, it would be at a fixed volume and fixed channel/source.
   * It looks like one RasPi could provide only one audio signal, so I may simply need to wire the same signal to both PCUs (ie, to the left and right seat audio jacks)--or buy a second RasPi.
   * Use blue & green seat shell LEDs as indicators from the RasPi? or leave green LED as power indicator for PGA ECU?
+### FEET
+* The brackets that these seats stand on are separated fairly widely side to side, and somewhat wide front to back. However, they are designed to be secured to the floor of a plane. This poses at least two problems when using them in a home:
+  * This concentrates the weight of the seats (somewhere around 280 lbs, as listed on the registration plate on one of the seats) on four very small points, which may damage the carpet in a home.
+  * When in fully-flat configuration, this places the center of gravity of the seats far forward relative to the front foot, and they have a tendency to tip forward.
+* SOLUTION to both problems: Using 1x4 wooden boards, create rails to set the feet of the seats into.
+  * This spreads out the weight of the seats over a larger surface area of the floor, hopefully reducing damage to carpet or the padding beneath.
+  * Extending the boards to the front of the seats enlarges the footprint of the seats, and helps move the center of gravity not so far in front of thsi footprint
+  * Extending the boards to the rear of the seats will allow adding some counterweight, to move the effective center of gravity even farther back.
+  * This has a side benefit of making the seats slightly easier to push around on a carpet floor.
+* DESIGN and BUILD:
+  * I had some scrap 1x4 boards I could use
+  * I cut two lengths of 36 inches, which was enough to extend 1.5 inches in front of the front feet (can't extend too far in front, otherwise the boards will be in the way for people sitting down in the seats), and about 9 inches behind the rear feet. This is enough length to allow putting a counterweight on each board, without needing to keep the seats too far from the wall of the room.
+  * The pattern of the front feet is two circles, with centers 1" apart, each of 0.75" diameter. ([photo1](media/301-foot-bracket-front-measurements-1.jpg), [photo2](media/302-foot-bracket-front-measurements-2.jpg)) I decided to drill holes into the boards for these feet to fit into. (There is a threaded ring on these feet that is of wider diameter, which can be tightened down so that the weight from the front feet is transferred to the board, not simply going straight into the carpet. With my tools, I couldn't make these holes *not* go all the way through the boards.)
+  * The rear feet are more elongated and can rest on top of the board. In order to keep the rear feet from popping up off the board when the seats are front-loaded, I bought 1" conduit brackets and screwed them down over these feet. ([photo](media/304-foot-bracket-rear.jpg))
+  * The completed boards are shown in [this photo](media/303-foot-bracket-in_prog.jpg)
+  * Once the seats were placed on the boards and the rear brackets screwed into place, I placed a 25lb weight (conveniently in the form of an unused kettlebell) on the rear part of the board, to help keep the seats from tipping forward in the fully-reclined position. ([photo](media/305-foot-bracket-overall.jpg))
 
 ## Task list
 * clean upholstery
