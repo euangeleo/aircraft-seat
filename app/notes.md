@@ -17,13 +17,17 @@ re-check the file, etc,
 Further reflection indicates that (1) I don't need the audio running 24 hours
 a day, 7 days a week. If the connection is shut off overnight, this might
 allow for a bit of error-checking (the connection will be reset every 24 hours).
-It also seems to be the case that the live streaming URL for LiveATC audio
-changes every day or every several days, so using one constant URL may cause
-problems. SO, let's have a third Python script that scrapes the human-UI webpage
-for LiveATC each morning before 5 (run as a CRON job?), to get that day's streaming
-URL. This URL can be written to a file. The audio-playing Python script can be
-run at 5am (again, via CRON?), first reading in the URL, and then connecting to
-it. At 10om each day, the connection can be closed and the script terminated.
+I'm assuming that the live streaming URL for LiveATC audio does not
+change every day or every several days, so using one constant URL won't cause
+problems. If this assumption turns out not to be valid, I can have a third Python
+script that scrapes the URL for LiveATC each morning before 5 (run as a CRON job?),
+to get that day's streaming URL. This URL can be written to a file. The
+audio-playing Python script can be run at 5am (again, via CRON?), first reading
+in the URL, and then connecting to it. At 10om each day, the connection can be
+closed and the script terminated. I'll build the audio streaming script to read
+the URL from a file, so that if I need to change it, I can do so easily. (I'll
+also need to validate the URL each day, since I think otherwise this would be
+a security hole.)
 
 ## End of 2023-05-27
 
