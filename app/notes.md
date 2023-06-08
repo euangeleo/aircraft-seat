@@ -37,3 +37,8 @@ series. It properly sets the blinking status based on the text that is in
 `/tmp/audiostatus`.
 
 The file `audiostream.py` writes the `STARTUP` status to the status file.
+
+## End of 2023-06-07
+
+I now have `audiostream.py` set up to use python-vlc. I'm not sure if it's
+working, though. Maybe have to fiddle a bit in a REPL to make sure it's working?
