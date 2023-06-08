@@ -50,6 +50,11 @@
   * The rear feet are more elongated and can rest on top of the board. In order to keep the rear feet from popping up off the board when the seats are front-loaded, I bought 1" conduit brackets and screwed them down over these feet. ([photo](media/304-foot-bracket-rear.jpg))
   * The completed boards are shown in [this photo](media/303-foot-bracket-in_prog.jpg)
   * Once the seats were placed on the boards and the rear brackets screwed into place, I placed a 25lb weight (conveniently in the form of an unused kettlebell) on the rear part of the board, to help keep the seats from tipping forward in the fully-reclined position. ([photo](media/305-foot-bracket-overall.jpg))
+### SOFTWARE
+* I honestly don't need the audio running 24-7; I could have it run 5am to 10pm; maybe reconnecting each day is better? The streaming audio URL seems to change daily.
+* one python script, loaded at startup and always running: check a status file, light LED based on status for 2 seconds, then repeat
+* one python script, run daily (prior to 5am), to scrape the current URL for the streaming site
+* one python script, run dailty (at 5am), to connect to streaming URL and start playing audio
 
 ## Task list
 * clean upholstery
