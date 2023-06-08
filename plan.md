@@ -54,14 +54,13 @@
 ## Task list
 * clean upholstery
 * dust/clean upper/outer and inner/under -- DONE
-
 * re-glue center armrest top panel (this must wait until I'm sure I don't need access to the center console for any wiring/rewiring work)
 * move upstairs -- DONE
 
-* build a frame so it won't tip forward when both seats are reclining
-  * two boards, DONE
-  * 1in conduit brackets to secure rear feet to board, in progress
-  * drill holes for forward feet bolts: need dimensions
+* build a frame so it won't tip forward when both seats are reclining -- DONE
+  * two boards -- DONE
+  * 1in conduit brackets to secure rear feet to board -- DONE
+  * drill holes for forward feet bolts -- DONE
 * power supply to FRONT OUTLETS (use mains power 110V60Hz) -- DONE
 * power supply to READING LIGHTS (12V from PGA Electronics box (recliner controls)?
 * power supply to MOTORS (INPUT: hard to get 115V400Hz into first PGA box? easier to get 24/27/29 VDC into second PGA box?)
