@@ -58,3 +58,21 @@ dim, so I don't think so.
 
 So, if the code part is working well enough now, then I need to focus on
 getting it set up to run via CRON or something comparable.
+
+Run on startup: indicator.py (should remain always running)
+Run daily at 6am: audiostream.py (will run daily until 10pm)
+
+Guide for running things on RasPi on startup: https://www.sparkfun.com/news/2779
+
+```
+sudo nano /etc/rc.local
+```
+Just before the exit 0 line, add the following:
+```
+/usr/bin/python3 /home/<username>/<path>/indicator.py &
+```
+
+Guide for setting up cron jobs: https://pimylifeup.com/cron-jobs-and-crontab/
+
+crontab -e
+0 6 * * * /home/<username>/<path>/audiostream.py
