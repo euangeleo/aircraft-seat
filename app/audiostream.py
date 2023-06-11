@@ -62,24 +62,24 @@ def main():
     instance = vlc.Instance()
     player = instance.media_player_new()
     media = instance.media_new(STREAMURL)
-    player.set_media(media)
-    player_status = player.play()
-    player.audio_set_volume(100)
+    while time.localtime()[3] < 22:  # while it's before 10pm
+        if not player.is_playing():
+            if status != 'ERROR':  # logical check first, to reduce writes to flash
+                status = 'ERROR'
+                writeStatus(status, STATUSFILE)
 
-    if player_status == 0:
-        status = 'CONNECTED'
-        writeStatus(status, STATUSFILE)
-    else:
-        status = 'ERROR'
-        writeStatus(status, STATUSFILE)
-        # I'd like to keep re-trying to start, if this is the case; however,
-        # if I instead make the "start audio stream" sequence into a
-        # function that I could call again, then wouldn't the audio stream be
-        # closed when that function returns? This is dumb for now, but I'm
-        # going to start with this as a minimum viable product.
-        exit(1)
+            player.set_media(media)
+            player_status = player.play()
+            player.audio_set_volume(100)
+            if player_status == 0:
+                status = 'CONNECTED'
+                writeStatus(status, STATUSFILE)
+        else:
+            if status != 'CONNECTED':  # logical check first, to reduce writes to flash
+                status = 'CONNECTED'
+                writeStatus(status, STATUSFILE)
+        time.sleep(2)
 
-    time.sleep(57600)  # 6am to 10pm is 16 hrs = 57600 sec
     player.stop()
     status = 'STARTUP'
     writeStatus(status, STATUSFILE)
