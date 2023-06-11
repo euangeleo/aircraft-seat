@@ -22,9 +22,9 @@ change every day or every several days, so using one constant URL won't cause
 problems. If this assumption turns out not to be valid, I can have a third Python
 script that scrapes the URL for LiveATC each morning before 5 (run as a CRON job?),
 to get that day's streaming URL. This URL can be written to a file. The
-audio-playing Python script can be run at 5am (again, via CRON?), first reading
+audio-playing Python script can be run at 6am (again, via CRON?), first reading
 in the URL, and then connecting to it. At 10om each day, the connection can be
-closed and the script terminated. I'll build the audio streaming script to read
+closed and the script terminated. I could build the audio streaming script to read
 the URL from a file, so that if I need to change it, I can do so easily. (I'll
 also need to validate the URL each day, since I think otherwise this would be
 a security hole.)
@@ -42,3 +42,19 @@ The file `audiostream.py` writes the `STARTUP` status to the status file.
 
 I now have `audiostream.py` set up to use python-vlc. I'm not sure if it's
 working, though. Maybe have to fiddle a bit in a REPL to make sure it's working?
+
+## Middle of 23-06-11
+
+The `audiostream.py` file is now properly using python-vlc. I couldn't
+get it to work using the LiveATC *playlist*, but it seems to work fine if I
+use the URL that is provided in that playlist. Rather than have that script
+have to parse the playlist to get the URL, I've just hard-coded it in. If
+this becomes a problem, I can change it.
+
+Now that I'm shutting down the playing of the stream overnight, do I need to
+add a fourth status, something like "overnight hold"? Will a blinking light
+be disturbing if someone is ever sleeping in that room? The blue LED is pretty
+dim, so I don't think so.
+
+So, if the code part is working well enough now, then I need to focus on
+getting it set up to run via CRON or something comparable.
