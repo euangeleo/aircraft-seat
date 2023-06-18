@@ -25,13 +25,16 @@ STATUSFILE = '/tmp/audiostatus'
 #STREAMURL = '/tmp/ktus.pls'  # Doesn't seem to actually play with python-vlc commands?
 #STREAMURL = 'https://www.liveatc.net/play/ktus.pls' # maybe this requires media_player.playlist_play()?
 # URL taken from the playlist file:
-STREAMURL = 'http://d.liveatc.net/ktus'
+#STREAMURL = 'http://d.liveatc.net/ktus'
 
 # KTUS Del/Gnd/Twr/App
 # https://www.liveatc.net/hlisten.php?mount=ktus2&icao=ktus
 # <audio id="player2" crossorigin="anonymous" preload="none" src="https://s1-bos.liveatc.net/ktus2?nocache=2023052803382740287" type="audio/mp3" controls="controls" autoplay="true">
 #STREAMURL = 'https://s1-bos.liveatc.net/ktus2'
 #STREAMURL = 'http://d.liveatc.net/ktus2'
+
+# KUAZ Jazz 89.1 HD-2
+STREAMURL = 'https://hls.azpm.org/fj-stream/128k/fjazz128.m3u8'
 
 # FUNCTIONS
 def writeStatus(status, path):
