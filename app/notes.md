@@ -76,3 +76,52 @@ Guide for setting up cron jobs: https://pimylifeup.com/cron-jobs-and-crontab/
 
 crontab -e
 0 6 * * * /home/<username>/<path>/audiostream.py
+
+## Middle of 23-06-17
+
+The .rclocal and cron approach doesn't seem to have worked well. The audio script doesn't seem
+to be starting daily, and I can't tell whether the indicator script is running (the LED is on,
+but I don't know if the GPIO pins would default to "off", or would remain "on", if that script
+stopped).
+
+I don't want to have two instances of the audio stream running, and although I could add a check
+to the script at the beginning (when executed, first check whether there's another script by
+this name running, and if it is, then end), the easier way to ensure that would be to use
+systemd.
+
+Following the systemd section on https://www.sparkfun.com/news/2779
+
+I'll use these files:
+
+/lib/systemd/system/indicator.service
+```quote
+[Unit]
+Description=Use an LED to indicate the audio status
+After=multi-user.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/seb/GitHub/aircraft-seat/app/indicator.py
+
+[Install]
+WantedBy=multi-user.target
+```
+
+/lib/systemd/system/audiostream.service
+```quote
+[Unit]
+Description=stream audio to the headphones
+After=multi-user.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/seb/GitHub/aircraft-seat/app/audiostream.py
+
+[Install]
+WantedBy=multi-user.target
+```
+
+then
+
+sudo systemctl daemon-reload
+sudo systemctl enable indicator.service
+sudo systemctl enable audiostream.service
+sudo reboot
