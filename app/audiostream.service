@@ -1,0 +1,13 @@
+[Unit]
+Description=stream audio to the headphones
+After=network-online.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/seb/GitHub/aircraft-seat/app/audiostream.py
+Restart=always
+RestartSec=5s
+KillMode=process
+TimeoutSec=infinity
+
+[Install]
+WantedBy=network-online.target

@@ -1,0 +1,13 @@
+[Unit]
+Description=Use an LED to indicate the audio status
+After=boot-complete.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/seb/GitHub/aircraft-seat/app/indicator.py
+Restart=always
+RestartSec=4s
+KillMode=process
+TimeoutSec=infinity
+
+[Install]
+WantedBy=boot-complete.target

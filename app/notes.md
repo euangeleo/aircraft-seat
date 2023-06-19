@@ -97,26 +97,34 @@ I'll use these files:
 ```quote
 [Unit]
 Description=Use an LED to indicate the audio status
-After=multi-user.target
+After=boot-complete.target
 
 [Service]
 ExecStart=/usr/bin/python3 /home/seb/GitHub/aircraft-seat/app/indicator.py
+Restart=always
+RestartSec=4s
+KillMode=process
+TimeoutSec=infinity
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=boot-complete.target
 ```
 
 /lib/systemd/system/audiostream.service
 ```quote
 [Unit]
 Description=stream audio to the headphones
-After=multi-user.target
+After=network-online.target
 
 [Service]
 ExecStart=/usr/bin/python3 /home/seb/GitHub/aircraft-seat/app/audiostream.py
+Restart=always
+RestartSec=5s
+KillMode=process
+TimeoutSec=infinity
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=network-online.target
 ```
 
 then
