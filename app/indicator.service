@@ -12,4 +12,4 @@ TimeoutSec=infinity
 PrivateTmp=false
 
 [Install]
-WantedBy=boot-complete.target
+WantedBy=graphical.target

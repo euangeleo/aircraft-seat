@@ -12,4 +12,4 @@ TimeoutSec=infinity
 PrivateTmp=false
 
 [Install]
-WantedBy=network-online.target
+WantedBy=graphical.target
