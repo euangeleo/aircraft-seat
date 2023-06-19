@@ -82,14 +82,16 @@ crontab -e
 The .rclocal and cron approach doesn't seem to have worked well. The audio script doesn't seem
 to be starting daily, and I can't tell whether the indicator script is running (the LED is on,
 but I don't know if the GPIO pins would default to "off", or would remain "on", if that script
-stopped).
+stopped). The light status doesn't seem to be changing properly when I change the status in
+the file, and ps -A | grep python3 doesn't turn up any processes.
 
 I don't want to have two instances of the audio stream running, and although I could add a check
 to the script at the beginning (when executed, first check whether there's another script by
 this name running, and if it is, then end), the easier way to ensure that would be to use
 systemd.
 
-Following the systemd section on https://www.sparkfun.com/news/2779
+Following the systemd section on https://www.sparkfun.com/news/2779 and 
+https://learn.sparkfun.com/tutorials/how-to-run-a-raspberry-pi-program-on-startup#method-3-systemd
 
 I'll use these files:
 
