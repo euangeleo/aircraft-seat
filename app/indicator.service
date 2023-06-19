@@ -3,11 +3,13 @@ Description=Use an LED to indicate the audio status
 After=boot-complete.target
 
 [Service]
+PIDFile=/var/run/indicator/indicator.pid
 ExecStart=/usr/bin/python3 /home/seb/GitHub/aircraft-seat/app/indicator.py
 Restart=always
 RestartSec=4s
 KillMode=process
 TimeoutSec=infinity
+PrivateTmp=false
 
 [Install]
 WantedBy=boot-complete.target

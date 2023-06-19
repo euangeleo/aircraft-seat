@@ -135,3 +135,11 @@ sudo systemctl daemon-reload
 sudo systemctl enable indicator.service
 sudo systemctl enable audiostream.service
 sudo reboot
+
+## End of 23-06-18
+
+The systemd solution sorta works, though the services don't seem to be starting on boot. I can start
+them manually, but the audiostream.service doesn't seem to be writing the status to /tmp. I found
+this page (https://blog.oddbit.com/post/2012-11-05-fedora-private-tmp/) which suggests that systemd
+services *may* be using private directories in /tmp. I don't *see* one that looks like it's private,
+but let me force that setting to be false and see if it helps.
