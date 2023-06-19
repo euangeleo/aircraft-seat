@@ -146,3 +146,12 @@ but let me force that setting to be false and see if it helps.
 
 Hmm, for reasons I don't yet know, it appears that the audiostream.py file, when run as a systemd
 service, isn't writing to /tmp/audiostatus, even when the "private temp" setting is set to false.
+Is this likely a permissions issue? What user is the systemd process being run as, and what
+permissions does it have?
+
+Also, as the system is set up now, it's not running as I intended: I intended the audio stream
+to shut off daily at 10pm, and restart daily at 6pm, while the indicator should remain on at all
+times. However, the restarting value for the audiostream service means that it'll keep
+restarting the service after 10pm, even though each time it does, the service will shut itself
+off--until 12:00am, at which time the script will allow itself to not shut off, since it's now
+(again) "before" 10pm. Need to adjust this, if I really want my intended behavior.
