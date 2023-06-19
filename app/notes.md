@@ -143,3 +143,6 @@ them manually, but the audiostream.service doesn't seem to be writing the status
 this page (https://blog.oddbit.com/post/2012-11-05-fedora-private-tmp/) which suggests that systemd
 services *may* be using private directories in /tmp. I don't *see* one that looks like it's private,
 but let me force that setting to be false and see if it helps.
+
+Hmm, for reasons I don't yet know, it appears that the audiostream.py file, when run as a systemd
+service, isn't writing to /tmp/audiostatus, even when the "private temp" setting is set to false.
