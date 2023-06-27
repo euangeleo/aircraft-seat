@@ -13,6 +13,7 @@ Photos: [sale item front](https://web.archive.org/web/20230204035608/https://cdn
 ### media/
 * Photos documenting process
 ### app/
+* Notes and plans for software: [nodes.md](./app/notes.md)
 * Code for any Raspberry Pi control
 
 ## CURRENT NEEDS
