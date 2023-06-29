@@ -155,3 +155,14 @@ times. However, the restarting value for the audiostream service means that it'l
 restarting the service after 10pm, even though each time it does, the service will shut itself
 off--until 12:00am, at which time the script will allow itself to not shut off, since it's now
 (again) "before" 10pm. Need to adjust this, if I really want my intended behavior.
+
+## 23-06-29
+
+Okay, using systemd to restart the audio streaming service if it ever stopped was not a good
+solution for keeping the audio off overnight. It also meant that the streaming would start again
+at midnight, rather than 6am. However, systemd offers timers!
+
+https://wiki.archlinux.org/title/systemd/Timers
+
+This may be a good option to restart the service daily at 6am, and let the script stop itself
+daily at 10pm.
