@@ -1,6 +1,6 @@
 [Unit]
 Description=Use an LED to indicate the audio status
-After=boot-complete.target
+RequiresMountsFor=/tmp
 
 [Service]
 PIDFile=/var/run/indicator/indicator.pid

@@ -1,6 +1,6 @@
 [Unit]
 Description=stream audio to the headphones
-After=network-online.target
+RequiresMountsFor=/tmp
 
 [Service]
 PIDFile=/var/run/audiostream/audiostream.pid
