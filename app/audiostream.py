@@ -17,12 +17,12 @@ import time
 # CONSTANTS
 STATUSFILE = '/tmp/audiostatus'
 CHANNELFILE = '/tmp/audiochannel'
-STREAMURLS = {1, 'https://slcr.me/SLCR1'                     # rock, St Louis Classic Rock Preservation Society
-              2, 'https://slcr.me/SLCR66'                    # oldies, SLCR Route 66
-              3, 'https://kexp.streamguys1.com/kexp64.aac'   # pop, KEXP Seattle
-              4, 'http://cast1.torontocast.com:1650/stream'  # jazz, Jazz Radio Network
-              5, 'https://kbaq.streamguys1.com/kbaq_mp3_128' # classical, KBAQ (Phoenix)
-              6, 'http://d.liveatc.net/ktus'}                # ATC, KTUS
+STREAMURLS = {1:'https://slcr.me/SLCR1',                     # rock, St Louis Classic Rock Preservation Society
+              2:'https://slcr.me/SLCR66',                    # oldies, SLCR Route 66
+              3:'https://kexp.streamguys1.com/kexp64.aac',   # pop, KEXP Seattle
+              4:'http://cast1.torontocast.com:1650/stream',  # jazz, Jazz Radio Network
+              5:'https://kbaq.streamguys1.com/kbaq_mp3_128', # classical, KBAQ (Phoenix)
+              6:'http://d.liveatc.net/ktus'}                # ATC, KTUS
 
 
 # FUNCTIONS
@@ -34,7 +34,7 @@ def writeStatus(status, path):
         return 0
     except IOError:
         print("Could not create {}".format(path))
-        return(1)
+        return 1
 
 def readChannel(path):
     '''Get the audio stream channel (integer 1 to 6)'''
@@ -45,22 +45,24 @@ def readChannel(path):
                 return int(firstline)
             else:
                 print("audiochannel file is not channel 1-6: {}".format(firstline))
-                return(0)
-        except IOError:
-            print("Could not read {}".format(path))
-            return(0)
+                return 0
+    except IOError:
+        print("Could not read {}".format(path))
+        return 0
 
-def startPlayer(URL):
+def startPlayer(instance, URL):
+    player = instance.media_player_new()
     media = instance.media_new(URL)
     player.set_media(media)
     player_status = player.play()
     player.audio_set_volume(100)
-    return player_status
+    return player, player_status
 
-def setStatus(newstatus):
+def setStatus(status, newstatus):
     if newstatus != status: # logical check first, to reduce writes to flash
         status = newstatus
         writeStatus(status, STATUSFILE)
+    return status
 
 def main():
     """
@@ -78,12 +80,11 @@ def main():
     channel = readChannel(CHANNELFILE)
 
     instance = vlc.Instance()
-    player = instance.media_player_new()
-    playerStatus = startPlayer(STREAMURLS[channel])
+    player, playerStatus = startPlayer(instance, STREAMURLS[channel])
     if playerStatus == 0:
-        setStatus('CONNECTED')
+        status = setStatus(status, 'CONNECTED')
     else:
-        setStatus('ERROR')
+        status = setStatus(status, 'ERROR')
 
     while time.localtime()[3] < 22:  # while it's before 10pm
         # TODO: check WiFi/internet status? if down, then switch to error?
@@ -91,26 +92,28 @@ def main():
         nowChannel = readChannel(CHANNELFILE)
         if nowChannel != channel:
             channel = nowChannel
-            setStatus('STARTUP')
-            playerStatus = startPlayer(STREAMURLS[channel])
+            status = setStatus(status, 'STARTUP')
+            player.stop()
+            player, playerStatus = startPlayer(instance, STREAMURLS[channel])
             if playerStatus == 0:
-                setStatus('CONNECTED')
+                status = setStatus(status, 'CONNECTED')
             else:
-                setStatus('ERROR')
+                status = setStatus(status, 'ERROR')
 
         if not player.is_playing():
-            setStatus('ERROR')
-            playerStatus = startPlayer(STREAMURLS[channel])
+            status = setStatus(status, 'ERROR')
+            player.stop()
+            player, playerStatus = startPlayer(instance, STREAMURLS[channel])
             if playerStatus == 0:
-                setStatus('CONNECTED')
+                status = setStatus(status, 'CONNECTED')
             else:
-                setStatus('ERROR')
+                status = setStatus(status, 'ERROR')
         else:
-            setStatus('CONNECTED')
+            status = setStatus(status, 'CONNECTED')
         time.sleep(2)
 
     player.stop()
-    setStatus('STARTUP')
+    status = setStatus(status, 'STARTUP')
     exit(0)
 
 
