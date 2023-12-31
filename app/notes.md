@@ -166,3 +166,54 @@ https://wiki.archlinux.org/title/systemd/Timers
 
 This may be a good option to restart the service daily at 6am, and let the script stop itself
 daily at 10pm.
+
+## 23-12-30
+
+The system has mostly now been running in a way that I'm happy with. It seems that the file access
+permissions for the sysctl processes has been worked out. The things that I now see as issues are:
+
+1. VLC seems to lose the stream to the local NPR station's jazz channel.
+2. I'd like to eventually get the passenger control units working. My current hypothesis is that they use the "1-wire protocol" (info: https://www.engineersgarage.com/what-is-the-1-wire-protocol/) For that, it would be nice to have several radio stations ready to go.
+3. I still need to get a 400Hz AC power supply, but that's unrelated to the code.
+
+In hopes of preparing for a multi-channel system, I'd like to add a channel switcher that works
+similarly to the status indicator--using the file system as a communications bus. I'd like to
+have a file in /tmp that is something like "channel", which contains a number (from 1 to 6) which the
+audiostream service would regularly read--and when the number in that file changes, then the audiostream
+service would load the corresponding streaming URL.
+
+Sadly, it seems that the local NPR jazz station changed the format of their online jazz station, and
+VLC can no longer open it from the URL. (and I haven't been able to find a different URL that VLC
+would work with!) So, here are a selection of six URLs that VLC *can* open:
+
+```python
+STREAMURLS = {1, 'https://slcr.me/SLCR1'                     # rock, St Louis Classic Rock Preservation Society
+              2, 'https://slcr.me/SLCR66'                    # oldies, SLCR Route 66
+              3, 'https://kexp.streamguys1.com/kexp64.aac'   # pop, KEXP Seattle
+              4, 'http://cast1.torontocast.com:1650/stream'  # jazz, Jazz Radio Network
+              5, 'https://kbaq.streamguys1.com/kbaq_mp3_128' # classical, KBAQ (Phoenix)
+              6, 'http://d.liveatc.net/ktus'}                # ATC, KTUS
+```
+
+Removed these notes from the code:
+
+```python
+# KTUS Tower/Ops
+# https://www.liveatc.net/hlisten.php?mount=ktus&icao=ktus
+# <audio id="player2" crossorigin="anonymous" preload="none" src="https://s1-bos.liveatc.net/ktus?nocache=2023052803395933640" type="audio/mp3" controls="controls" autoplay="true">
+#STREAMURL = 'https://s1-fmt2.liveatc.net/ktus'
+# From playlist file (available at https://www.liveatc.net/search/?icao=ktus)
+#STREAMURL = '/tmp/ktus.pls'  # Doesn't seem to actually play with python-vlc commands?
+#STREAMURL = 'https://www.liveatc.net/play/ktus.pls' # maybe this requires media_player.playlist_play()?
+# URL taken from the playlist file:
+#STREAMURL = 'http://d.liveatc.net/ktus'
+
+# KTUS Del/Gnd/Twr/App
+# https://www.liveatc.net/hlisten.php?mount=ktus2&icao=ktus
+# <audio id="player2" crossorigin="anonymous" preload="none" src="https://s1-bos.liveatc.net/ktus2?nocache=2023052803382740287" type="audio/mp3" controls="controls" autoplay="true">
+#STREAMURL = 'https://s1-bos.liveatc.net/ktus2'
+#STREAMURL = 'http://d.liveatc.net/ktus2'
+
+# KUAZ Jazz 89.1 HD-2
+STREAMURL = 'https://hls.azpm.org/fj-stream/128k/fjazz128.m3u8'
+```
