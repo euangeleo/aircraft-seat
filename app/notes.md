@@ -217,3 +217,10 @@ Removed these notes from the code:
 # KUAZ Jazz 89.1 HD-2
 STREAMURL = 'https://hls.azpm.org/fj-stream/128k/fjazz128.m3u8'
 ```
+
+## 23-12-31
+
+That change worked well for the channel switching. Let's move the volume control to a similar system, in preparation
+for getting the volume control working on the passenger control panel.
+
+Now that the number of files is increasing, let's also move them to a subdirectory in /tmp.

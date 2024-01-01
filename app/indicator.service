@@ -8,7 +8,7 @@ ExecStart=/usr/bin/python3 /home/seb/GitHub/aircraft-seat/app/indicator.py
 KillMode=process
 TimeoutSec=infinity
 PrivateTmp=false
-OpenFile=/tmp/audiostatus:read-only
+OpenFile=/tmp/audiostream/audiostatus:read-only
 
 [Install]
 WantedBy=graphical.target

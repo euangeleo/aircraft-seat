@@ -8,8 +8,9 @@ ExecStart=/usr/bin/python3 /home/seb/GitHub/aircraft-seat/app/audiostream.py
 KillMode=process
 TimeoutSec=infinity
 PrivateTmp=false
-OpenFile=/tmp/audiostatus
-OpenFile=/tmp/audiochannel:read-only
+OpenFile=/tmp/audiostream/audiostatus
+OpenFile=/tmp/audiostream/audiochannel:read-only
+OpenFile=/tmp/audiostream/audiovolume:read-only
 
 [Install]
 WantedBy=graphical.target

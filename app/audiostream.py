@@ -15,8 +15,9 @@ import vlc
 import time
 
 # CONSTANTS
-STATUSFILE = '/tmp/audiostatus'
-CHANNELFILE = '/tmp/audiochannel'
+STATUSFILE = '/tmp/audiostream/audiostatus'
+VOLUMEFILE = '/tmp/audiostream/audiovolume'
+CHANNELFILE = '/tmp/audiostream/audiochannel'
 STREAMURLS = {1:'https://slcr.me/SLCR1',                     # rock, St Louis Classic Rock Preservation Society
               2:'https://slcr.me/SLCR66',                    # oldies, SLCR Route 66
               3:'https://kexp.streamguys1.com/kexp64.aac',   # pop, KEXP Seattle
@@ -50,12 +51,28 @@ def readChannel(path):
         print("Could not read {}".format(path))
         return 0
 
-def startPlayer(instance, URL):
+
+def readVolume(path):
+    '''Get the audio volume (integer 0 to 100)'''
+    try:
+        with open(path, mode='r', encoding='utf-8-sig') as file:
+            firstline = file.read().strip()
+            if (0 <= int(firstline) <= 100):
+                return int(firstline)
+            else:
+                print("audiovolume file is not in range 0-100: {}".format(firstline))
+                return 0
+    except IOError:
+        print("Could not read {}".format(path))
+        return 0
+
+
+def startPlayer(instance, URL, audiovolume=100):
     player = instance.media_player_new()
     media = instance.media_new(URL)
     player.set_media(media)
     player_status = player.play()
-    player.audio_set_volume(100)
+    player.audio_set_volume(audiovolume)
     return player, player_status
 
 def setStatus(status, newstatus):
@@ -77,10 +94,11 @@ def main():
 
     status = 'STARTUP'
     writeStatus(status, STATUSFILE)
-    channel = readChannel(CHANNELFILE)
+    audiovolume = readVolume(VOLUMEFILE) or 100
+    channel = readChannel(CHANNELFILE) or 1
 
     instance = vlc.Instance()
-    player, playerStatus = startPlayer(instance, STREAMURLS[channel])
+    player, playerStatus = startPlayer(instance, STREAMURLS[channel], audiovolume)
     if playerStatus == 0:
         status = setStatus(status, 'CONNECTED')
     else:
@@ -99,6 +117,11 @@ def main():
                 status = setStatus(status, 'CONNECTED')
             else:
                 status = setStatus(status, 'ERROR')
+
+        nowVolume = readVolume(VOLUMEFILE)
+        if nowVolume != audiovolume:
+            audiovolume = nowVolume
+            player.audio_set_volume(audiovolume)
 
         if not player.is_playing():
             status = setStatus(status, 'ERROR')
