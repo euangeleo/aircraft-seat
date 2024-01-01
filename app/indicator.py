@@ -3,6 +3,7 @@
     Eric M. Jackson
     start of work 2023-05-27
     v 1.0 2023-06-04
+    v 1.1 2023-12-31 work with constants file; changed settings path to /tmp/audiostream
 
     ASSUMPTIONS:
     -- Status file will have the status written on the first line
@@ -13,13 +14,10 @@
 #from gpiozero import LED
 import RPi.GPIO as GPIO
 from time import sleep
+import constants as cs
+# in use: cs.PINNUM, cs.STATUSFILE
 
-# CONSTANTS
-STATUSFILE = '/tmp/audiostatus'
-PINNUM = 14 # This pin is directly below the 5V out and ground pin on RPi header that I'm also using
-
-
-def led_on(pinnum=PINNUM):
+def led_on(pinnum=cs.PINNUM):
     GPIO.setmode(GPIO.BCM)
     GPIO.setwarnings(False)
     GPIO.setup(pinnum, GPIO.OUT)
@@ -27,7 +25,7 @@ def led_on(pinnum=PINNUM):
     return
 
 
-def led_off(pinnum=PINNUM):
+def led_off(pinnum=cs.PINNUM):
     GPIO.output(pinnum, GPIO.LOW)
     return
 
@@ -71,10 +69,10 @@ def main():
     """indefinite loop to read and indicate the current audio state"""
     while True:
         try:
-            with open(STATUSFILE, mode='r', encoding='utf-8-sig') as file:
+            with open(cs.STATUSFILE, mode='r', encoding='utf-8-sig') as file:
                 firstline = file.read().strip()
         except IOError:
-            print("Could not read {}".format(STATUSFILE))
+            print("Could not read {}".format(cs.STATUSFILE))
             exit(1)
 
         # Each function should take about 2 seconds then return

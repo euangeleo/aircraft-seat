@@ -13,18 +13,8 @@
 # IMPORTS
 import vlc
 import time
-
-# CONSTANTS
-STATUSFILE = '/tmp/audiostream/audiostatus'
-VOLUMEFILE = '/tmp/audiostream/audiovolume'
-CHANNELFILE = '/tmp/audiostream/audiochannel'
-STREAMURLS = {1:'https://slcr.me/SLCR1',                     # rock, St Louis Classic Rock Preservation Society
-              2:'https://slcr.me/SLCR66',                    # oldies, SLCR Route 66
-              3:'https://kexp.streamguys1.com/kexp64.aac',   # pop, KEXP Seattle
-              4:'http://cast1.torontocast.com:1650/stream',  # jazz, Jazz Radio Network
-              5:'https://kbaq.streamguys1.com/kbaq_mp3_128', # classical, KBAQ (Phoenix)
-              6:'http://d.liveatc.net/ktus'}                # ATC, KTUS
-
+import constants as cs
+# in use: cs.STATUSFILE, cs.VOLUMEFILE, cs.CHANNELFILE, cs.STREAMURLS
 
 # FUNCTIONS
 def writeStatus(status, path):
@@ -78,7 +68,7 @@ def startPlayer(instance, URL, audiovolume=100):
 def setStatus(status, newstatus):
     if newstatus != status: # logical check first, to reduce writes to flash
         status = newstatus
-        writeStatus(status, STATUSFILE)
+        writeStatus(status, cs.STATUSFILE)
     return status
 
 def main():
@@ -93,12 +83,12 @@ def main():
     """
 
     status = 'STARTUP'
-    writeStatus(status, STATUSFILE)
-    audiovolume = readVolume(VOLUMEFILE) or 100
-    channel = readChannel(CHANNELFILE) or 1
+    writeStatus(status, cs.STATUSFILE)
+    audiovolume = readVolume(cs.VOLUMEFILE) or 100
+    channel = readChannel(cs.CHANNELFILE) or 1
 
     instance = vlc.Instance()
-    player, playerStatus = startPlayer(instance, STREAMURLS[channel], audiovolume)
+    player, playerStatus = startPlayer(instance, cs.STREAMURLS[channel], audiovolume)
     if playerStatus == 0:
         status = setStatus(status, 'CONNECTED')
     else:
@@ -107,18 +97,18 @@ def main():
     while time.localtime()[3] < 22:  # while it's before 10pm
         # TODO: check WiFi/internet status? if down, then switch to error?
 
-        nowChannel = readChannel(CHANNELFILE)
+        nowChannel = readChannel(cs.CHANNELFILE)
         if nowChannel != channel:
             channel = nowChannel
             status = setStatus(status, 'STARTUP')
             player.stop()
-            player, playerStatus = startPlayer(instance, STREAMURLS[channel])
+            player, playerStatus = startPlayer(instance, cs.STREAMURLS[channel])
             if playerStatus == 0:
                 status = setStatus(status, 'CONNECTED')
             else:
                 status = setStatus(status, 'ERROR')
 
-        nowVolume = readVolume(VOLUMEFILE)
+        nowVolume = readVolume(cs.VOLUMEFILE)
         if nowVolume != audiovolume:
             audiovolume = nowVolume
             player.audio_set_volume(audiovolume)
@@ -126,7 +116,7 @@ def main():
         if not player.is_playing():
             status = setStatus(status, 'ERROR')
             player.stop()
-            player, playerStatus = startPlayer(instance, STREAMURLS[channel])
+            player, playerStatus = startPlayer(instance, cs.STREAMURLS[channel])
             if playerStatus == 0:
                 status = setStatus(status, 'CONNECTED')
             else:
