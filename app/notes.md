@@ -224,3 +224,7 @@ That change worked well for the channel switching. Let's move the volume control
 for getting the volume control working on the passenger control panel.
 
 Now that the number of files is increasing, let's also move them to a subdirectory in /tmp.
+
+## 24-10-06
+
+The system doesn't automatically restart when the Pi shuts down and reboots. Let me fix some things with a script.
